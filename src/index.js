@@ -14,7 +14,7 @@ function renderMovies(movies) {
     movies.forEach(({title, rating, genre}) => {
         html +=
             `<ul> 
-    <li data-attribute="SOME_ID">${title} <br> rating: ${rating} <br> genre: ${genre}</li>
+    <li data-attribute="SOME_ID">${title}<br>rating: ${rating}<br>genre: ${genre}</li>
     </ul>`;
     });
     $('#movieList').html(html);
@@ -55,17 +55,22 @@ $('.addMovieBtn').click(function (e) {
 
 // once you have the title, rating, genre, id create a new movie object and pass that to your editMovie function
 
+
+
 $("#movieList").on('click','ul',function(e) {
     e.preventDefault();
     let target = e.target;
-    console.log($(target));
+    // console.log($(target));
     let movieString = ($(target)[0].innerHTML);
-    console.log(movieString.split('<br>'));
-    // let newMovieObject = JSON.parse(movieString);
+    let movieArray = (movieString.split('<br>'));
+    let movieNewString = movieArray.join();
+    let newMovieObject = JSON.parse("movieNewString");
+
+    console.log(movieNewString);
 
 //$(target)[0].dataset.attribute
 
-    // console.log(editMovie());
+    // console.log(editMovie(movieArray));
 
 });
 
