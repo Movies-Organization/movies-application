@@ -3,6 +3,7 @@ const {addMovie} = require('./api.js');
 const {editMovie} = require('./api.js');
 
 getMovies().then((movies) => {
+    $('#movieList').html("");
     renderMovies(movies)
 }).catch((error) => {
     alert('Oh no! Something went wrong.\nCheck the console for details.');
@@ -14,7 +15,7 @@ function renderMovies(movies) {
     movies.forEach(({title, rating, genre}) => {
         html +=
             `<ul> 
-    <li data-attribute="SOME_ID">${title}  <br>rating: ${rating }  <br>genre: ${genre}</li>
+    <li data-attribute="SOME_ID">${title}  <br>Rating: ${rating} <br>Genre: ${genre}</li><hr>
     </ul>`;
     });
     $('#movieList').html(html);
@@ -50,21 +51,28 @@ $('.addMovieBtn').click(function (e) {
 // edit movie function
 
 //==========Edit Movie
-function renderForm(arr){
+
+//on movie click render form
+function renderForm(arr) {
     $('#renderTitle').val(arr[0]);
-    $('#renderRating').html(arr[1].split(' ')[1]);
-    $('#renderGenre').html(arr[2].split(' ')[1]);
+    $('#renderRating').val(arr[1].split(' ')[1]);
+    $('#renderGenre').val(arr[2].split(' ')[1]);
+}
+
+//on btn click update
+function editMovieBtnC(e){
+    e.preventDefault();
+obj = {
+
+}
 }
 
 $("#movieList").on('click', 'ul', function (e) {
     e.preventDefault();
     let target = e.target;
     let targetText = ($(target).text());
-    console.log(targetText);
     let movieArray = (targetText.split('  '));
     return renderForm(movieArray);
-    // console.log(movieArray);
-
 });
 
 

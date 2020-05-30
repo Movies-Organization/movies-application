@@ -14,25 +14,25 @@
 
 <main class="row">
 <div class="movieContainer col-6">
-    <div id="movieList"></div>
+    <div id="movieList"><img id="loadingPic" src="img/popcornLoading.gif" alt=""></div>
 </div>
 
 <!--    form for movie title/ genre/ rating -->
-        <div class="movieForm formContainer col-6">
+        <div class="movieForm formContainer col-5">
     <form id="myForm">
         <div class="form-group">
             <label for="movieTitle">Enter Movie Title </label>
             <input type="text" class="title form-control" id="movieTitle" placeholder="Movie Title">
         </div>
         <div class="form-group">
-            <label for="movieRating">Movie Rating</label>
+            <label for="movieRating">&#11088;Movie Rating&#11088;</label>
             <select class="form-control" id="movieRating">
                 <option value="" disabled selected>Select your option</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option value="1">&#11088;1</option>
+                <option value="2">&#11088;&#11088;2</option>
+                <option value="3">&#11088;&#11088;&#11088;3</option>
+                <option value="4">&#11088;&#11088;&#11088;&#11088;4</option>
+                <option value="5">&#11088;&#11088;&#11088;&#11088;&#11088;5</option>
             </select>
         </div>
 
@@ -45,41 +45,41 @@
                 <option value="horror">Horror</option>
                 <option value="action">Action</option>
                 <option value="animated">Animated</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="sci-fi">Sci-Fi</option>
             </select>
         </div>
         <button class="addMovieBtn" type="submit">Add Movie</button>
     </form>
+            <hr>
+<!--&lt;!&ndash;            end of form container&ndash;&gt;-->
+<!--        </div>-->
 
-<!--            end of form container-->
-        </div>
-
-</main>
-    <div class="row" id="edit">
+<!--</main>-->
+<!--    <div class="row" id="edit">-->
 <!--    starting edit form -->
-    <div class="movieForm formContainer col-6 float-right">
+    <div class="movieForm formContainer col-12">
         <form id="myEditForm">
             <div class="form-group">
                 <label for="renderTitle">Edit Movie Title </label>
-                <input type="text" class="form-control" id="renderTitle">
+                <input type="text" class="form-control" id="renderTitle" placeholder="Edit movie title">
             </div>
             <div class="form-group">
-                <label for="editMovieRating">Edit Rating</label>
-                <select class="form-control" id="editMovieRating">
-<!--                    <option value="" disabled selected>Select your option</option>-->
-                    <option value="" disabled selected id="renderRating"></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                <label for="renderRating">&#11088;Edit Rating&#11088;</label>
+                <select class="form-control" id="renderRating">
+                    <option value="" disabled selected>Edit movie rating</option>
+                    <option value="1">&#11088;1</option>
+                    <option value="2">&#11088;&#11088;2</option>
+                    <option value="3">&#11088;&#11088;&#11088;3</option>
+                    <option value="4">&#11088;&#11088;&#11088;&#11088;4</option>
+                    <option value="5">&#11088;&#11088;&#11088;&#11088;&#11088;5</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="editMovieGenre">Edit Genre</label>
-                <select class="form-control" id="editMovieGenre">
-                    <option value="" disabled selected>Select your option</option>
-                    <option value="" disabled selected id="renderGenre"></option>
+                <label for="renderGenre">Edit Genre</label>
+                <select class="form-control" id="renderGenre">
+                    <option value="" disabled selected>Edit movie genre</option>
                     <option value="comedy">Comedy</option>
                     <option value="romance">Romance</option>
                     <option value="horror">Horror</option>
@@ -95,9 +95,12 @@
 
     </div>
 
+    <!--            end of form container-->
+    </main>
+    </div>
 
         <!--        end of container div-->
-    </div>
+<!--    </div>-->
 
 <!--    Bootstrap links-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
