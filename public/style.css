@@ -7,42 +7,48 @@ html, body {
     top: 5%;
     /*transform: translateY(-100%);*/
     text-align: center;
+    margin-top:2em;
 }
 
+.row{
+    margin-top: 3em;
+}
 .display {
     display: none;
 }
 
 .movieContainer{
     overflow: hidden;
-    height: 500px;
+    height: 300px;
 }
 
 #movieList{
     overflow: scroll;
-    border-left: 8px solid black;
-    border-top: 2px solid black;
+    border-left: 10px solid black;
+    border-top: 5px solid darkred;
     height: 100%;
-    box-sizing: content-box;
+    /*box-sizing: content-box;*/
     text-align: left;
+    background-color: lightgrey;
+    /*color: white;*/
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-}
+/*!* width *!*/
+/*::-webkit-scrollbar {*/
+/*    width: 10px;*/
+/*}*/
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
+/*!* Track *!*/
+/*::-webkit-scrollbar-track {*/
+/*    background: #f1f1f1;*/
+/*}*/
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
+/*!* Handle *!*/
+/*::-webkit-scrollbar-thumb {*/
+/*    background: #888;*/
+/*}*/
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
+/*!* Handle on hover *!*/
+/*::-webkit-scrollbar-thumb:hover {*/
+/*    background: #555;*/
+/*}*/

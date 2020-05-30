@@ -220,6 +220,12 @@
       "rating": "5",
       "genre": "horror",
       "id": 37
+    },
+    {
+      "title": "new movie",
+      "rating": "2",
+      "genre": "romance",
+      "id": 38
     }
   ]
 }

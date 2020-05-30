@@ -10,7 +10,7 @@
 
     <div class="container">
         <h1>Reel Stars!</h1>
-
+        <hr>
 
 <main class="row">
 <div class="movieContainer col-6">
@@ -54,18 +54,19 @@
         </div>
 
 </main>
-    <div class="row">
+    <div class="row" id="edit">
 <!--    starting edit form -->
     <div class="movieForm formContainer col-6 float-right">
         <form id="myEditForm">
             <div class="form-group">
-                <label for="editMovieTitle">Enter Movie Title </label>
-                <input type="text" class="title form-control" id="editMovieTitle" placeholder="Movie Title">
+                <label for="renderTitle">Edit Movie Title </label>
+                <input type="text" class="form-control" id="renderTitle">
             </div>
             <div class="form-group">
-                <label for="editMovieRating">Movie Rating</label>
+                <label for="editMovieRating">Edit Rating</label>
                 <select class="form-control" id="editMovieRating">
-                    <option value="" disabled selected>Select your option</option>
+<!--                    <option value="" disabled selected>Select your option</option>-->
+                    <option value="" disabled selected id="renderRating"></option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -75,9 +76,10 @@
             </div>
 
             <div class="form-group">
-                <label for="editMovieGenre">Movie Genre</label>
+                <label for="editMovieGenre">Edit Genre</label>
                 <select class="form-control" id="editMovieGenre">
                     <option value="" disabled selected>Select your option</option>
+                    <option value="" disabled selected id="renderGenre"></option>
                     <option value="comedy">Comedy</option>
                     <option value="romance">Romance</option>
                     <option value="horror">Horror</option>
@@ -85,7 +87,7 @@
                     <option value="animated">Animated</option>
                 </select>
             </div>
-            <button class="addMovieBtn" type="submit">Add Movie</button>
+            <button class="addMovieBtn" type="submit">Edit Movie</button>
         </form>
 
         <!--            end of form container-->

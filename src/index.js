@@ -14,27 +14,20 @@ function renderMovies(movies) {
     movies.forEach(({title, rating, genre}) => {
         html +=
             `<ul> 
-    <li data-attribute="SOME_ID">${title}<br>rating: ${rating}<br>genre: ${genre}</li>
+    <li data-attribute="SOME_ID">${title}  <br>rating: ${rating }  <br>genre: ${genre}</li>
     </ul>`;
     });
     $('#movieList').html(html);
     $('li').addClass('indMovie');
 }
 
-
-//movie post
-
-function newMovieObject(title, rating, genre) {
-    let userMovieTitle = $('.title').val();
-    let userMovieStars = $('#movieRating').val();
-    let userMovieGenre = $('#movieGenre').val();
-
-    const newMovie = {
-        'title': userMovieTitle,
-        'rating': userMovieStars,
-        'genre': userMovieGenre
+//===========Add movie
+function newMovieObject() {
+    return {
+        'title': $('.title').val(),
+        'rating': $('#movieRating').val(),
+        'genre': $('#movieGenre').val()
     };
-    return newMovie;
 }
 
 $('.addMovieBtn').click(function (e) {
@@ -50,29 +43,30 @@ $('.addMovieBtn').click(function (e) {
 //click li and console.log title rating genre id
 //e.target target what was click
 //jquery select e.target using $(e.target)
-// traverse the dom to pull out the title, rating, id (if needed, include the id of the          .......us:(maybe reduce)
+// traverse the dom to pull out the title, rating, genre, id (if needed, include the id of the          .......us:(maybe reduce)
 // add the id of the movie using the data attribute like data-id=SOME_ID to an element in the li
 
 // once you have the title, rating, genre, id create a new movie object and pass that to your editMovie function
+// edit movie function
 
+//==========Edit Movie
+function renderForm(arr){
+    $('#renderTitle').val(arr[0]);
+    $('#renderRating').html(arr[1].split(' ')[1]);
+    $('#renderGenre').html(arr[2].split(' ')[1]);
+}
 
-
-$("#movieList").on('click','ul',function(e) {
+$("#movieList").on('click', 'ul', function (e) {
     e.preventDefault();
     let target = e.target;
-    // console.log($(target));
-    let movieString = ($(target)[0].innerHTML);
-    let movieArray = (movieString.split('<br>'));
-    let movieNewString = movieArray.join();
-    let newMovieObject = JSON.parse("movieNewString");
-
-    console.log(movieNewString);
-
-//$(target)[0].dataset.attribute
-
-    // console.log(editMovie(movieArray));
+    let targetText = ($(target).text());
+    console.log(targetText);
+    let movieArray = (targetText.split('  '));
+    return renderForm(movieArray);
+    // console.log(movieArray);
 
 });
+
 
 
 
