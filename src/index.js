@@ -14,7 +14,7 @@ function renderMovies(movies) {
     movies.forEach(({title, rating, genre}) => {
         html +=
             `<ul> 
-    <li>${title} <br> rating: ${rating} <br> genre: ${genre}</li>
+    <li data-attribute="SOME_ID">${title} <br> rating: ${rating} <br> genre: ${genre}</li>
     </ul>`;
     });
     $('#movieList').html(html);
@@ -58,12 +58,13 @@ $('.addMovieBtn').click(function (e) {
 $("#movieList").on('click','ul',function(e) {
     e.preventDefault();
     let target = e.target;
-    // console.log($(target));
-    console.log($(target)[0].innerText);
+    console.log($(target));
+    let movieString = ($(target)[0].innerHTML);
+    console.log(movieString.split('<br>'));
+    // let newMovieObject = JSON.parse(movieString);
 
+//$(target)[0].dataset.attribute
 
-    //class list = title
-    // console.log($(target));
     // console.log(editMovie());
 
 });
