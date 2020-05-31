@@ -12,6 +12,13 @@ const editOptions = {
   }
 };
 
+const deleteOptions = {
+  method: 'DELETE',
+  headers: {
+    'Content-Type': 'application/json',
+  }
+};
+
 module.exports = {
   getMovies: () => {
     return fetch('/api/movies')
@@ -25,6 +32,11 @@ module.exports = {
   editMovie: (editPost) => {
     editOptions.body = JSON.stringify(editPost);
     return fetch(`/api/movies/${editPost.id}`, editOptions)
+        .then(response => response.json());
+  },
+  deleteMovie: (deletePost) => {
+    deleteOptions.body = JSON.stringify(deletePost);
+    return fetch(`/api/movies/${deletePost.id}`, deleteOptions)
         .then(response => response.json());
   }
 };

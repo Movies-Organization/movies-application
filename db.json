@@ -13,18 +13,6 @@
       "id": 2
     },
     {
-      "title": "IT",
-      "rating": "3",
-      "genre": "horror",
-      "id": 3
-    },
-    {
-      "title": "Home Alone",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 4
-    },
-    {
       "title": "Wreck It Ralph",
       "rating": "1",
       "genre": "comedy",
@@ -32,57 +20,9 @@
     },
     {
       "title": "Intersteller",
-      "rating": "1",
-      "genre": "comedy",
+      "rating": "3",
+      "genre": "sci-fi",
       "id": 6
-    },
-    {
-      "title": "That Darn Cat",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 7
-    },
-    {
-      "title": "Dark Skies",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 8
-    },
-    {
-      "title": "The Black Stallion",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 9
-    },
-    {
-      "title": "Moana",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 10
-    },
-    {
-      "title": "Brink",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 11
-    },
-    {
-      "title": "Oliver and Company",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 12
-    },
-    {
-      "title": "Ferngully",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 13
-    },
-    {
-      "title": "Pet Cementary",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 14
     },
     {
       "title": "All Dogs Go To Heaven",
@@ -97,28 +37,10 @@
       "id": 16
     },
     {
-      "title": "",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 17
-    },
-    {
-      "title": "",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 18
-    },
-    {
       "title": "Sucker Punch",
       "rating": "1",
       "genre": "comedy",
       "id": 19
-    },
-    {
-      "title": "Intern",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 20
     },
     {
       "title": "Codeup",
@@ -131,12 +53,6 @@
       "rating": "1",
       "genre": "comedy",
       "id": 22
-    },
-    {
-      "title": "Scary Movie 2",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 23
     },
     {
       "title": "Home Alone",
@@ -157,153 +73,16 @@
       "id": 26
     },
     {
-      "title": "IT",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 27
-    },
-    {
-      "title": "Wreck It Ralph",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 28
-    },
-    {
-      "title": "Intersteller",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 29
-    },
-    {
-      "title": "Home Alone",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 30
-    },
-    {
-      "title": "hey",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 31
-    },
-    {
-      "title": "That Darn Cat",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 32
-    },
-    {
-      "title": "PowerPuff Girls",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 33
-    },
-    {
-      "title": "Julia",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 34
-    },
-    {
-      "title": "Shelby",
-      "genre": "comedy",
-      "id": 35
-    },
-    {
       "title": "George of the Jungle",
       "rating": "3",
       "genre": "romance",
       "id": 36
     },
     {
-      "title": "Deena",
-      "rating": "5",
-      "genre": "horror",
-      "id": 37
-    },
-    {
-      "title": "new movie",
-      "rating": "2",
-      "genre": "romance",
-      "id": 38
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 39
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 40
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 41
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 42
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 43
-    },
-    {
       "title": "The Neverending Story",
       "rating": "4",
       "genre": "fantasy",
       "id": 44
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 45
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 46
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 47
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 48
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 49
-    },
-    {
-      "title": "",
-      "rating": null,
-      "genre": null,
-      "id": 50
-    },
-    {
-      "title": "IT",
-      "rating": "2",
-      "genre": "romance",
-      "id": 51
     },
     {
       "title": "Dark Skies",

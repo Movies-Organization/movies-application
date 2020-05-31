@@ -1,6 +1,7 @@
 const {getMovies} = require('./api.js');
 const {addMovie} = require('./api.js');
 const {editMovie} = require('./api.js');
+const {deleteMovie} = require('./api.js');
 
 getMovies().then((movies) => {
     $('#movieList').html("");
@@ -10,11 +11,12 @@ getMovies().then((movies) => {
     console.log(error);
 });
 
+//=========Render Form
 function renderMovies(movies) {
     let html = '';
     movies.forEach(({title, rating, genre, id}) => {
         html += `<ul> 
-<li>${title}  <br>Rating: ${rating}  <br>Genre: ${genre}  <br><span style ="display: none;" id='id' data-id="SOME_ID">${id}</span></li>
+<li>${title}  <br>Rating: ${rating}  <br>Genre: ${genre}  <br><span style ="display: none;" id='id'>${id}</span></li>
     </ul>`;
     });
     $('#movieList').html(html);
@@ -46,7 +48,6 @@ $("#movieList").on('click', 'li', function (e) {
     let target = e.target;
     let targetText = ($(target).text());
     movieArr = targetText.split('  ');
-console.log(movieArr[3]);
     $('#renderTitle').val(movieArr[0]);
     $('#renderRating').val(movieArr[1].split(' ')[1]);
     $('#renderGenre').val(movieArr[2].split(' ')[1]);
@@ -61,12 +62,22 @@ function movieObject() {
     }
 }
 
-//on btn click update
+//=======BTN Click Update
 $('#editMovieBtn').click(function (e) {
     e.preventDefault();
     editMovie(movieObject());
     getMovies().then((movies) => {
         (renderMovies(movies));
-    });      //not sure if needed
-    $('#myForm')[0].reset();
+    });
+    $('#myEditForm')[0].reset();
+});
+
+//=======BTN Click Delete
+$('#deleteMovieBtn').click(function (e) {
+    e.preventDefault();
+    deleteMovie(movieObject());
+    getMovies().then((movies) => {
+        (renderMovies(movies));
+    });
+    $('#myEditForm')[0].reset();
 });
