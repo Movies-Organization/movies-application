@@ -2,7 +2,7 @@
   "movies": [
     {
       "title": "Casablanca",
-      "rating": "4",
+      "rating": "5",
       "genre": "romance",
       "id": 1
     },
@@ -14,8 +14,8 @@
     },
     {
       "title": "IT",
-      "rating": "1",
-      "genre": "comedy",
+      "rating": "3",
+      "genre": "horror",
       "id": 3
     },
     {
@@ -310,6 +310,12 @@
       "rating": "2",
       "genre": "horror",
       "id": 52
+    },
+    {
+      "title": "Home Alone",
+      "rating": "2",
+      "genre": "horror",
+      "id": 53
     }
   ]
 }
