@@ -68,26 +68,27 @@ $("#movieList").on('click', 'ul', function (e) {
 
 function movieObject() {
     let title = (movieArr[0]);
-    let ratingNum = ((movieArr[1].split(' ')[1]));
+    let ratingNum = (movieArr[1].split(' ')[1]);
     let genreRating = (movieArr[2].split(' ')[1]);
-    let idNum = (movieArr[3]);
+    let idNum = getAttribute(span);
 
-    return {
-        "title": title,
-        "rating": ratingNum,
-        "genre": genreRating,
-        "id": idNum
-    }
+    // return {
+    //     "title": title,
+    //     "rating": ratingNum,
+    //     "genre": genreRating,
+    // }
+        return console.log(idNum);
 }
 
 //on btn click update
 $('editMovieBtn').click(function (e) {
     e.preventDefault();
-    editMovie(movieObject());
-    getMovies().then((movies) => {
-        (renderMovies(movies));
-    });
-    $('#myForm')[0].reset();
+    return movieObject();
+    // editMovie(movieObject());
+    // getMovies().then((movies) => {
+    //     (renderMovies(movies));
+    // });
+    // $('#myForm')[0].reset();
 });
 
 
