@@ -12,14 +12,16 @@ getMovies().then((movies) => {
 
 function renderMovies(movies) {
     let html = '';
-    movies.forEach(({title, rating, genre}) => {
-        html +=
-            `<ul> 
-    <li data-attribute="SOME_ID">${title}  <br>Rating: ${rating} <br>Genre: ${genre}</li><hr>
+    movies.forEach(({title, rating, genre, id}) => {
+        html += `<ul> 
+<li data-attribute="SOME_ID">${title}  
+<br>Rating: ${rating} 
+<br>Genre: ${genre} 
+<span style ="visibility: hidden;" id="data">${id}</span></li>
+<hr>
     </ul>`;
     });
     $('#movieList').html(html);
-    $('li').addClass('indMovie');
 }
 
 //===========Add movie
@@ -51,40 +53,41 @@ $('.addMovieBtn').click(function (e) {
 // edit movie function
 
 //==========Edit Movie
+function renderForm() {
 
-//on movie click render form
-function renderForm(arr) {
-    $('#renderTitle').val(arr[0]);
-    $('#renderRating').val(arr[1].split(' ')[1]);
-    $('#renderGenre').val(arr[2].split(' ')[1]);
-}
-
-//on btn click update
-function editButton() {
-    $('editMovieBtn').click(function (e, arr) {
-        e.preventDefault();
-        let title = (arr[0]);
-        let ratingNum = ((arr[1].split(' ')[1]));
-        let genreRating = (arr[2].split(' ')[1]);
-
-        const obj {
-            title: title,
-            rating: ratingNum,
-            genre: genreRating,
-            id: $('li').data("id")
-        }
-        return obj;
-    });
-}
-
-function renderMovieArray() {
     $("#movieList").on('click', 'ul', function (e) {
         e.preventDefault();
         let target = e.target;
         let targetText = ($(target).text());
-        return (targetText.split('  '));
+        let arr = targetText.split('  ');
+
+//on movie click render form
+        $('#renderTitle').val(arr[0]);
+        $('#renderRating').val(arr[1].split(' ')[1]);
+        $('#renderGenre').val(arr[2].split(' ')[1]);
     });
 }
+
+//on btn click update
+function editButton(arr) {
+    let title = (arr[0]);
+    let ratingNum = ((arr[1].split(' ')[1]));
+    let genreRating = (arr[2].split(' ')[1]);
+    let idNum = (arr[3]);
+
+    return {
+        'title': title,
+        'rating': ratingNum,
+        'genre': genreRating,
+        'id': idNum
+    }
+}
+
+$('editMovieBtn').click(function (e) {
+    e.preventDefault();
+    editButton(renderMovieArray());
+});
+
 
 renderForm(renderMovieArray());
 editMovie(editButton(renderMovieArray()));
