@@ -54,10 +54,12 @@ $('.addMovieBtn').click(function (e) {
 
 //==========Edit Movie
 let movieArr;
+let targetIDGrab;
 
 $("#movieList").on('click', 'ul', function (e) {
     e.preventDefault();
     let target = e.target;
+    targetIDGrab = $(target)[0].dataset.attribute;
     let targetText = ($(target).text());
     movieArr = targetText.split('  ');
 
@@ -65,30 +67,30 @@ $("#movieList").on('click', 'ul', function (e) {
     $('#renderRating').val(movieArr[1].split(' ')[1]);
     $('#renderGenre').val(movieArr[2].split(' ')[1]);
 });
-
+let title;
+let ratingNum;
+let genreRating;
 function movieObject() {
     let title = (movieArr[0]);
     let ratingNum = (movieArr[1].split(' ')[1]);
     let genreRating = (movieArr[2].split(' ')[1]);
-    let idNum = getAttribute(span);
+    // let idNum = targetIDGrab;
 
-    // return {
-    //     "title": title,
-    //     "rating": ratingNum,
-    //     "genre": genreRating,
-    // }
-        return console.log(idNum);
+    return {
+        "title": title,
+        "rating": ratingNum,
+        "genre": genreRating,
+        "id": targetIDGrab
+    }
 }
-
 //on btn click update
 $('editMovieBtn').click(function (e) {
     e.preventDefault();
-    return movieObject();
-    // editMovie(movieObject());
-    // getMovies().then((movies) => {
-    //     (renderMovies(movies));
-    // });
-    // $('#myForm')[0].reset();
+    editMovie(movieObject());
+    getMovies().then((movies) => {
+        (renderMovies(movies));
+    });
+    $('#myForm')[0].reset();
 });
 
 
