@@ -15,9 +15,9 @@ function renderMovies(movies) {
     movies.forEach(({title, rating, genre, id}) => {
         html += `<ul> 
 <li data-attribute="SOME_ID">${title}  
-<br>Rating: ${rating} 
-<br>Genre: ${genre} 
-<span style ="visibility: hidden;" id="data">${id}</span></li>
+<br>Rating: ${rating}  
+<br>Genre: ${genre}  
+<br><span style ="visibility: hidden;" id="data" data-attribute="SOME_ID">${id}</span></li>
 <hr>
     </ul>`;
     });
@@ -53,44 +53,42 @@ $('.addMovieBtn').click(function (e) {
 // edit movie function
 
 //==========Edit Movie
-function renderForm() {
+let movieArr;
 
-    $("#movieList").on('click', 'ul', function (e) {
-        e.preventDefault();
-        let target = e.target;
-        let targetText = ($(target).text());
-        let arr = targetText.split('  ');
+$("#movieList").on('click', 'ul', function (e) {
+    e.preventDefault();
+    let target = e.target;
+    let targetText = ($(target).text());
+    movieArr = targetText.split('  ');
 
-//on movie click render form
-        $('#renderTitle').val(arr[0]);
-        $('#renderRating').val(arr[1].split(' ')[1]);
-        $('#renderGenre').val(arr[2].split(' ')[1]);
-    });
-}
+    $('#renderTitle').val(movieArr[0]);
+    $('#renderRating').val(movieArr[1].split(' ')[1]);
+    $('#renderGenre').val(movieArr[2].split(' ')[1]);
+});
 
-//on btn click update
-function editButton(arr) {
-    let title = (arr[0]);
-    let ratingNum = ((arr[1].split(' ')[1]));
-    let genreRating = (arr[2].split(' ')[1]);
-    let idNum = (arr[3]);
+function movieObject() {
+    let title = (movieArr[0]);
+    let ratingNum = ((movieArr[1].split(' ')[1]));
+    let genreRating = (movieArr[2].split(' ')[1]);
+    let idNum = (movieArr[3]);
 
     return {
-        'title': title,
-        'rating': ratingNum,
-        'genre': genreRating,
-        'id': idNum
+        "title": title,
+        "rating": ratingNum,
+        "genre": genreRating,
+        "id": idNum
     }
 }
 
+//on btn click update
 $('editMovieBtn').click(function (e) {
     e.preventDefault();
-    editButton(renderMovieArray());
+    editMovie(movieObject());
+    getMovies().then((movies) => {
+        (renderMovies(movies));
+    });
+    $('#myForm')[0].reset();
 });
-
-
-renderForm(renderMovieArray());
-editMovie(editButton(renderMovieArray()));
 
 
 
