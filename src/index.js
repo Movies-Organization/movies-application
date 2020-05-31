@@ -60,20 +60,34 @@ function renderForm(arr) {
 }
 
 //on btn click update
-function editMovieBtnC(e){
-    e.preventDefault();
-obj = {
+function editButton() {
+    $('editMovieBtn').click(function (e, arr) {
+        e.preventDefault();
+        let title = (arr[0]);
+        let ratingNum = ((arr[1].split(' ')[1]));
+        let genreRating = (arr[2].split(' ')[1]);
 
-}
+        const obj {
+            title: title,
+            rating: ratingNum,
+            genre: genreRating,
+            id: $('li').data("id")
+        }
+        return obj;
+    });
 }
 
-$("#movieList").on('click', 'ul', function (e) {
-    e.preventDefault();
-    let target = e.target;
-    let targetText = ($(target).text());
-    let movieArray = (targetText.split('  '));
-    return renderForm(movieArray);
-});
+function renderMovieArray() {
+    $("#movieList").on('click', 'ul', function (e) {
+        e.preventDefault();
+        let target = e.target;
+        let targetText = ($(target).text());
+        return (targetText.split('  '));
+    });
+}
+
+renderForm(renderMovieArray());
+editMovie(editButton(renderMovieArray()));
 
 
 
