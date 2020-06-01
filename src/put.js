@@ -14,11 +14,11 @@ const clickMovie = function() {
     });
 };
 
-const caps = function capitalizeFirstLetter(str) {
+function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
-};
+}
 
-const createdNewMovie = function movieObject() {
+function movieObject() {
     let title = capitalizeFirstLetter($('#renderTitle').val());
     return {
         'title': title,
@@ -26,7 +26,7 @@ const createdNewMovie = function movieObject() {
         'genre': $('#renderGenre').val(),
         'id': movieArr[3]
     }
-};
+}
 
 const updateMovie = function() {
     $('#editMovieBtn').click(function (e) {

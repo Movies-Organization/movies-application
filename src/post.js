@@ -1,19 +1,24 @@
+const {addMovie} = require('./api.js');
+const {getMovies} = require('./api.js');
+const {renderList} = require('./moviesList');
+
+// renderList.movieList();
 //===========Add movie
-
-const caps = function capitalizeFirstLetter(str) {
+function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
-};
+}
 
-const newMovie = function newMovieObject() {
+
+function newMovieObject() {
     let title = capitalizeFirstLetter($('.title').val());
     return {
         'title': title,
         'rating': $('#movieRating').val(),
         'genre': $('#movieGenre').val()
     };
-};
+}
 
-const createMovie =function () {
+const createMovie = function () {
     ('#addMovieBtn').click(function (e) {
         e.preventDefault();
         addMovie(newMovieObject());
