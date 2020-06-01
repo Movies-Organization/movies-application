@@ -2,99 +2,39 @@
   "movies": [
     {
       "title": "Casablanca",
-      "rating": "5",
-      "genre": "romance",
+      "rating": "3",
+      "genre": "Romance",
       "id": 1
     },
     {
       "title": "Star Wars: A New Hope",
-      "rating": "5",
-      "genre": "action",
+      "rating": "4",
+      "genre": "Sci-fi",
       "id": 2
     },
     {
-      "title": "Wreck It Ralph",
-      "rating": "1",
-      "genre": "comedy",
+      "title": "The Descent",
+      "rating": "4",
+      "genre": "Romance",
+      "id": 3
+    },
+    {
+      "title": "Finding Nemo",
+      "rating": "4",
+      "genre": "Animated",
       "id": 5
     },
     {
-      "title": "Intersteller",
+      "title": "IT",
       "rating": "3",
-      "genre": "sci-fi",
+      "genre": "Horror",
       "id": 6
     },
     {
-      "title": "All Dogs Go To Heaven",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 15
-    },
-    {
-      "title": "Blade Runner 2045",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 16
-    },
-    {
-      "title": "Sucker Punch",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 19
-    },
-    {
-      "title": "Codeup",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 21
-    },
-    {
       "title": "Scary Movie",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 22
-    },
-    {
-      "title": "Home Alone",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 24
-    },
-    {
-      "title": "Home Alone",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 25
-    },
-    {
-      "title": "Wreck It Ralph",
-      "rating": "1",
-      "genre": "comedy",
-      "id": 26
-    },
-    {
-      "title": "George of the Jungle",
-      "rating": "3",
-      "genre": "romance",
-      "id": 36
-    },
-    {
-      "title": "The Neverending Story",
-      "rating": "4",
-      "genre": "fantasy",
-      "id": 44
-    },
-    {
-      "title": "Dark Skies",
       "rating": "2",
-      "genre": "horror",
-      "id": 52
-    },
-    {
-      "title": "Home Alone",
-      "rating": "2",
-      "genre": "horror",
-      "id": 53
+      "genre": "Comedy",
+      "id": 7
     }
   ]
 }
