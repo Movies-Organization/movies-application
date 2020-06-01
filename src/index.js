@@ -2,6 +2,16 @@ const {getMovies} = require('./api.js');
 const {addMovie} = require('./api.js');
 const {editMovie} = require('./api.js');
 const {deleteMovie} = require('./api.js');
+const {createNewMovie} = require('./post.js');
+const{editExistingMovie} = require('./put.js');
+const{deleteSelectedMovie} = require('./delete.js');
+
+addMovie();
+editMovie();
+deleteMovie();
+createNewMovie();
+editExistingMovie();
+deleteSelectedMovie();
 
 getMovies().then((movies) => {
     $('#movieList').html("");
@@ -61,77 +71,72 @@ function renderMovies(movies) {
 //         $('#addMovieBtn').prop('disabled', false);
 //     }
 // }
-function capitalizeFirstLetter(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}
+// function capitalizeFirstLetter(str) {
+//     return str.charAt(0).toUpperCase() + str.slice(1);
+// }
 
-//===========Add movie
-function newMovieObject() {
-    let title = capitalizeFirstLetter($('.title').val());
-    // doubleSpace();
-    return {
-        'title': title,
-        'rating': $('#movieRating').val(),
-        'genre': $('#movieGenre').val()
-    };
-}
-
-$('#addMovieBtn').click(function (e) {
-    e.preventDefault();
-    // $('.addForm').addClass('hide');
-    addMovie(newMovieObject());
-    getMovies().then((movies) => {
-        (renderMovies(movies));
-    });
-    $('#myForm')[0].reset();
-});
+// //===========Add movie
+// function newMovieObject() {
+//     let title = capitalizeFirstLetter($('.title').val());
+//     return {
+//         'title': title,
+//         'rating': $('#movieRating').val(),
+//         'genre': $('#movieGenre').val()
+//     };
+// }
+//
+// $('#addMovieBtn').click(function (e) {
+//     e.preventDefault();
+//     addMovie(newMovieObject());
+//     getMovies().then((movies) => {
+//         (renderMovies(movies));
+//     });
+//     $('#myForm')[0].reset();
+// });
 
 //==========Edit Movie
-let movieArr;
+// let movieArr;
+//
+// $("#movieList").on('click', 'ul', function (e) {
+//     e.preventDefault();
+//     let target = e.target;
+//     $(target).toggleClass('highlight');
+//     let targetText = ($(target).text());
+//     movieArr = targetText.split('  ');
+//     $('#renderTitle').val(movieArr[0]);
+//     $('#renderRating').val(movieArr[1].split(' ')[1]);
+//     $('#renderGenre').val(movieArr[2].split(' ')[1]);
+// });
+//
+// function movieObject() {
+//     let title = capitalizeFirstLetter($('#renderTitle').val());
+//     return {
+//         'title': title,
+//         'rating': $('#renderRating').val(),
+//         'genre': $('#renderGenre').val(),
+//         'id': movieArr[3]
+//     }
+// }
+//
+// $('#editMovieBtn').click(function (e) {
+//     e.preventDefault();
+//     editMovie(movieObject());
+//     getMovies().then((movies) => {
+//         (renderMovies(movies));
+//     });
+//     $('#myEditForm')[0].reset();
+// });
 
-$("#movieList").on('click', 'ul', function (e) {
-    e.preventDefault();
-    let target = e.target;
-    $(target).toggleClass('highlight');
-    let targetText = ($(target).text());
-    movieArr = targetText.split('  ');
-    $('#renderTitle').val(movieArr[0]);
-    $('#renderRating').val(movieArr[1].split(' ')[1]);
-    $('#renderGenre').val(movieArr[2].split(' ')[1]);
-    // console.log($('#renderGenre').val(movieArr[2].split(' ')[1]));
-});
-
-function movieObject() {
-    let title = capitalizeFirstLetter($('#renderTitle').val());
-    return {
-        'title': title,
-        'rating': $('#renderRating').val(),
-        'genre': $('#renderGenre').val(),
-        'id': movieArr[3]
-    }
-}
-
-//=======BTN Click Edit
-$('#editMovieBtn').click(function (e) {
-    e.preventDefault();
-    // $('.editForm').addClass('hide');
-    editMovie(movieObject());
-    getMovies().then((movies) => {
-        (renderMovies(movies));
-    });
-    $('#myEditForm')[0].reset();
-});
-
-//=======BTN Click Delete
-$('#deleteMovieBtn').click(function (e) {
-    e.preventDefault();
-    // $('.editForm').addClass('hide');
-    deleteMovie(movieObject());
-    getMovies().then((movies) => {
-        (renderMovies(movies));
-    });
-    $('#myEditForm')[0].reset();
-});
+// //=======BTN Click Delete
+// $('#deleteMovieBtn').click(function (e) {
+//     e.preventDefault();
+//     // $('.editForm').addClass('hide');
+//     deleteMovie(movieObject());
+//     getMovies().then((movies) => {
+//         (renderMovies(movies));
+//     });
+//     $('#myEditForm')[0].reset();
+// });
 
 //======Main BTN Click
 $('.editForm').addClass('hide');

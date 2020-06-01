@@ -41,17 +41,11 @@ hr {
 .movieContainer {
     overflow: hidden;
     height: 400px;
-    /*border-left: 30px solid black;*/
-    /*border-right: 30px solid black;*/
-    /*border-top: 5px solid darkred;*/
     justify-content: center;
 }
 
 #movieList {
     overflow: scroll;
-    /*border-left: 30px solid black;*/
-    /*border-right: 30px solid black;*/
-    /*border-top: 10px solid darkred;*/
     height: 100%;
     text-align: center;
     background-color: black;
